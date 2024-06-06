@@ -863,6 +863,10 @@ button{
         width: 95%;
     }
 
+
+    .contact-section h1 {
+        font-size: 14vw;
+    }
     .contact-form{
         display: flex;
         flex-direction: column!important;
@@ -877,9 +881,13 @@ button{
     }
     .contact-form .contact-form-left{
         margin-bottom: 2rem;
+        margin-top: 1rem;
     }   
     .contact-button button{
-        margin-top: 2rem;
+        /* margin-left: 10vw; */
+        border: 1px solid #666;
+        padding: 4px;
+        margin-top: .5rem;
         height: 5rem;
         width: 5rem;
         font-size: .8rem;
