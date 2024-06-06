@@ -120,12 +120,12 @@ cardHoverEffect();
 // animateSvg();
 
 
-function locoInitialize(){
-    const scroll = new LocomotiveScroll({
-        el: document.querySelector('.hero'),
-        smooth: true
-    });    
-}
+//function locoInitialize(){
+  //  const scroll = new LocomotiveScroll({
+    //    el: document.querySelector('.hero'),
+      //  smooth: true
+    //});    
+//}
 
 locoInitialize();
 
