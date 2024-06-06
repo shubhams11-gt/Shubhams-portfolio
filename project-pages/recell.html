@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jaldi:wght@400;700&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="./project-page.css">
+    <style>
+        .circle {
+           height: 20px;
+           width: 20px;
+           border-radius: 24px;
+           background-color: black;
+           position: fixed; 
+           top: 0;
+           left: 0;
+           pointer-events: none;
+           z-index: 99999999; /* so that it stays on top of all other elements */
+        }
+    </style>
+</head>
+<body>
+    <!-- ---- -->
+    <div class="main-cursor">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+    </div>
+    <!-- ---- -->
+    <div class="main-div">
+        <div class="nav">
+            <div>
+                <a href="#">Back to home</a>
+            </div>
+            <div>
+                <a href="#">Contact</a>
+            </div>
+        </div>
+        <div class="heading">
+            RECELL.IN
+        </div>
+        <div class="hero-image">
+            <img src="../images/sites-snap-shots/recell-1.png" alt="">
+        </div>
+
+        <div class="project-content">
+            <div>
+                <p>
+                    As the designer behind the scenes, I had the privilege of working on the MVP Masters project. MVP Masters is a development studio that specializes in turning visionary ideas into fully-fledged digital products. For this project, they offered a unique service: "Get Your MVP to Market in Just 3 Months." From concept to reality in 90 days, it's a testament to their efficiency and expertise in the field.
+                </p>
+            </div>
+            <div>
+                <ul class="project-imfo">
+                    <li><span>Client</span><p>MVP Masters</p></li>
+                    <li><span>Year</span><p>2023</p></li>
+                    <li><span>Scope of work</span><p>Logo Design, Web Design, Webflow Development</p></li>
+                    <li><span>Collaborator</span><p>Zlatko Najdenovski</p></li>
+                </ul>
+            </div>
+            <div>
+                <div class="view-project-button">
+                    <a href="">View Project</a>
+                </div>
+            </div>
+        </div>
+        <!-- data-scroll data-scroll-speed="-1.5"  -->
+        <div class="second-image">
+             <img  src="../images/sites-snap-shots/recell-2.png" alt="">
+        </div>
+
+        <div class="about-project">
+            <div>
+                <span>/ The Website</span>
+                <div>
+                    <h2>Crafting Digital Brilliance</h2></div>
+                <div>
+                    <p>I took the reins in designing a user-friendly website for MVP Masters, in line with their modern minimalist philosophy. My Webflow skills turned their vision into a digital masterpiece. This portfolio showcases our collaboration, resulting in a professional website that paves the way for MVP success.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="project-snaps">
+            <img src="../images/demo-img2.webp" alt="">
+        </div>
+        
+        <div class="footer">
+            <div>
+                <h3>Next Project <i class='bx bx-right-arrow-alt'></i></h3>
+            </div>
+            <div>
+                <h1><a href="#">Juspace.tech</a></h1>
+            </div>
+        </div>
+        
+        <div class="empty-box" style="height: 40vh;"></div>
+    </div>    
+    <!-- ---- -->
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js"></script>
+    <script src="../app.js"></script>
+    <script>
+        function locoInitialize(){
+               const scroll = new LocomotiveScroll({
+               el: document.querySelector('.main-div'),
+               smooth: true
+           });    
+        }
+
+        locoInitialize();
+    </script>
+    <script>
+        const coords = { x: 0, y: 0 };
+        const circles = document.querySelectorAll(".circle");
+        
+        const colors = [
+          "#333",
+          "#333",
+          "#333",
+          "#333",
+          "#333",
+          "#333",
+          "#333",
+          "#333",
+          "#333",
+          "#333",
+          "#333",
+          "#333",
+          "#333",
+          "#333",
+          "#333",
+          "#333",
+          "#333",
+          "#333",
+          "#333",
+          "#333",
+          "#333",
+          "#333",
+          "#333"
+        ];
+        
+        circles.forEach(function (circle, index) {
+          circle.x = 0;
+          circle.y = 0;
+          circle.style.backgroundColor = colors[index % colors.length];
+        });
+        
+        window.addEventListener("mousemove", function(e){
+          coords.x = e.clientX;
+          coords.y = e.clientY;
+          
+        });
+        function animateCircles() {
+          
+          let x = coords.x;
+          let y = coords.y;
+          
+          circles.forEach(function (circle, index) {
+            circle.style.left = x - 12 + "px";
+            circle.style.top = y - 12 + "px";
+            
+            circle.style.scale = (circles.length - index) / circles.length;
+            
+            circle.x = x;
+            circle.y = y;
+        
+            const nextCircle = circles[index + 1] || circles[0];
+            x += (nextCircle.x - x) * 0.3;
+            y += (nextCircle.y - y) * 0.3;
+          });
+         
+          requestAnimationFrame(animateCircles);
+        }
+        animateCircles();
+    </script>
+</body>
+</html>
